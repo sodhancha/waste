@@ -3,68 +3,208 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
-    <title>Hello, world!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>WMCC 2024</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+      />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+      />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+      rel="stylesheet"
+      />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
   </head>
   <style>
-    .bg-success,
-    .nav-link{
-      color: green !important;
+    *{
+    scroll-behavior: smooth;
+    font-family: 'Roboto';
     }
+    .table {
+    width: 100%;
+    table-layout: fixed; /* This makes both columns occupy the same space */
+    }
+    th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    }
+    th:nth-child(1), td:nth-child(1) {
+    width: 25%;
+    }
+    th:nth-child(2), td:nth-child(2) {
+    width: 75%;
+    }
+    .bg-success{
+    color: green !important;
+    }
+    .nav-link{
+    color: green !important;
+    }
+    swiper-container {
+    width: 100%;
+    height: 100%;
+    }
+    swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    footer {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents the background image from overflowing */
+    background-image: url(hero/footer.png);
+    background-size: cover;
+    z-index: 1;
+    }
+    footer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(30, 160, 73, 0.752); /* Adjust the alpha value (0.5) as needed */
+        z-index: -99; /* Ensure the overlay is on top of the background image */
+    }
+    footer .social_icon,
+    footer .menu{
+      position: relative;
+      display: flex;
+    }
+    footer .social_icon li,
+    footer .menu li{
+    list-style: none;
+    }
+    .social_icon li a{
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    transition: .5s;
+    }
+
+    .social_icon li a:hover{
+    transform: translateY(-10px);
+    }
+    footer .menu li a{
+    font-size: 1.2em;
+    color: #fff;
+    transition: .5s;
+    text-decoration: none;
+    opacity: 0.75;
+    }
+    footer .menu li a:hover{
+    opacity: 1;
+    }
+    footer p{
+    color: #fff;
+    margin-top: 15px;
+    font-size: 1.1em;
+    }
+    .line{
+      border-left: 8px solid green;
+      rotate: 90deg;
+      margin-bottom: 8px;
+    }
+
+    /* Style for column headers */
+.table th {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Style for 'Time' column */
+.table tbody td:first-child {
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+/* Style for 'Agenda' column */
+.table tbody td:last-child {
+    color: rgb(83, 80, 80);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    padding: 0px 20px; /* Adjust the padding for smaller screens */
+  }
+}
+
   </style>
   <body>
-    <!-- nav -->
-    <div class="container">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          <span class="fs-4 fw-bold text-success">Khalisisi</span>
-        </a>
-  
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">About</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Speaker</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Schedule</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Green Awards</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Sponser</a></li>
-        </ul>
+    <div class="container sticky-top" style="background-color: white;">
+      <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+        <div class="col-md-1 col-12 mb-2 mb-md-0 text-center text-md-start">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none" style="color: red; font-weight: 600;">
+            WMCC 2024
+          </a>
+        </div>
+    
+        <nav class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <a href="#background_waste" class="nav-link px-2">Why WMCC</a>
+          <a href="#inaguration_swipe" class="nav-link px-2">Inauguration</a>
+          <a href="#panel_swipe" class="nav-link px-2">Panel Discussion</a>
+          <a href="#case_presentation" class="nav-link px-2">Case Presentation</a>
+          <a href="#green_awards" class="nav-link px-2">Green Awards</a>
+          <a href="#todoevent" class="nav-link px-2">Schedule</a>
+          <a href="#contactus" class="nav-link px-2">Contact</a>
+        </nav>
+    
+        <div class="col-md-auto col-12 text-center">
+          <img src="./hero/logo1.png" width="auto" height="45">
+        </div>
       </header>
     </div>
-    <!-- banner -->
-    <div class="container border bg-success">
-      <div class="d-flex justify-content-between align-item-center p-3 my-3 text-white bg-purple rounded">
-        <div class="banner_text">
-          <h1 class="text-light fw-bold">VOTE GLOBALLY</h1>
-        </div>
-        <div class="banner_cta">
-          <button class="btn btn-lg btn-light">Vote Now</button>
-        </div>
+    
+    <div class="container px-2">
+      <div class="col-lg-12">
+        <img src="./hero/hero.jpeg" class="img-fluid mt-1" alt="Example image" width="100%" height="500" loading="lazy">
       </div>
     </div>
-
-    <!-- hero-section -->
-    <div class="container">
-      <div class="p-5 mb-4 bg-dark mt-2 rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-          <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-          <button class="btn btn-success btn-lg" type="button">Example button</button>
-        </div>
-      </div>
-    </div>
-    <div class="container">
+    <hr>
+    
+    <div class="container" id="background_waste">
       <section class="text-center">
         <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">What is WMCC?</h1>
-            <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+          <!-- <div class="col-lg-12 col-md-8 text-start">
+            <h1 class="fw-bold">BACKGROUND ON WASTE & CLIMATE</h1> -->
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold">BACKGROUND ON WASTE AND CLIMATE</h1>
+              <div class="line"></div>
+            </div>
+            <p class="text-body-primary" style="width: 90%; font-size: 18px; text-align: left;">In Nepal, the pressing issues of waste mismanagement and climate change intersect to create urgent challenges. Each year, 12 lakh kilos of waste find their way into landfills, despite an estimated 70% being recyclable. In Kathmandu, where the air quality index reached a staggering 206 AQI as of April 2024, the health implications are dire. Beyond urban confines, the alarming rate of Himalayan glacier melt - a billion metric tons annually - threatens water security for over a billion people in Asia. Against this backdrop, our conference seeks to unite stakeholders in a transformative dialogue, pioneering solutions for a sustainable future where waste is managed responsibly and the climate is safeguarded for generations to come.</p>
           </div>
         </div>
       </section>
-
-      <div class="album bg-body-tertiary">
+      <div style="background-color: white;">
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
@@ -86,194 +226,1067 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
+    <hr>
+    <div class="container" id="inaguration_swipe">
       <section class="text-center">
         <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Speakers</h1>
+          <div class="col-lg-12 col-md-8 text-start">
+
+            <!-- COPY -->
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold">INAGURATION</h1>
+              <div class="line"></div>
+            </div>
+
+            <p class="text-body-primary" style="width: 90%; font-size: 18px;">Be part of the inaugural session of our conference, where esteemed leaders and experts from diverse sectors come together to initiate a pivotal dialogue. Together, we commence our journey towards addressing the pressing challenges of waste management and climate change, with a shared dedication to shaping a sustainable future for Nepal and beyond.</p>
+          </div>
+          <img src="Inagurations/inaguration.jpeg" alt="">
+        </div>        
+        <!-- <section class="People border-update bg-white">
+          <div class="all_detail">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/pm.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Narendra Modi">
+                    <h5 class="mt-3">Rt. Hon'ble Puspa Kamal Dahal 'Prachanda'</h5>
+                    <p>Prime Minister of Nepal</p>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <hr style="width: 633px;">
+              </div>
+              <div class="row justify-content-center mt-3">
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/rajeshfinal.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Mr. Rajesh K. Agrawal</h5>
+                    <p>President - Confederation of Nepalese Industries (CNI)</p>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/topbahadur.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Hon'ble Top Bahadur Magar</h5>
+                    <p>Chairperson - National Human Rights Commission - NHRC Nepal</p>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/dhanbahadur.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Hon'ble Dhan Bahadur Budha</h5>
+                    <p>Minister - Ministry of Urban Development </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center mt-3">
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/patelfinal.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Mr. Sandeep Patel</h5>
+                    <p>President - National Solid Waste Management Association - India</p>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/upasana.jpeg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Ms. Upasana Rana</h5>
+                    <p>Executive Director - Women for Human Rights (WHR)</p>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/devyanifinal.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Ms. Devyani R.L. Rana</h5>
+                    <p>VP - Public Affairs & Sustainability - Coca Cola, India & S.W Asia</p>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="./Inagurations/aayushifinal.jpg" class="w-100 img-fluid shadow-lg rounded" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Ms. Aayushi KC</h5>
+                    <p>Founder - Khaalisisi Waste Management Company</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+      </section>
+    </div>
+    </section>
+    </div>
+
+    <hr>
+
+    <div class="container" id="background_waste">
+      <section class="text-center">
+        <div class="row py-lg-5">
+          <div class="col-lg-12 col-md-8 text-start">
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold">CLOSING</h1>
+              <div class="line"></div>
+            </div>
+            <p class="text-body-primary" style="width: 90%; font-size: 18px;">As the conference nears its conclusion, we anticipate the forthcoming closing remarks with great anticipation. We eagerly await the insights and reflections from distinguished leaders and industry pioneers, poised to guide us towards a shared commitment to a sustainable future. Join us as we wrap up this transformative event, poised to embark on a path where waste management and climate resilience are integral to our journey forward. Thank you for your participation in this significant moment.</p>
+          </div>
+        </div>
+        <section class="People border-update bg-white">
+          <div class="all_detail">
+            <div class="container">
+              <div class="row justify-content-center mt-3">
+                <img src="Inagurations/closing.jpeg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </section>
+        
+
+        <!-- this section -->
+        <!-- <section class="People border-update bg-white">
+          <div class="all_detail">
+            <div class="container">
+              <div class="row justify-content-center mt-3">
+                <img src="Inagurations/closing.jpeg" alt=""> -->
+
+                <!-- <div class="col-lg-2 col-md-6">
+                  <div class="person person_f">
+                    <img src="Inagurations/pm.jpg" class="w-100 img-fluid" alt="Aakanksha Tangri">
+                    <h5 class="mt-3">Puspa Kamal Dahal</h5>
+                    <p>Prime Minister of Nepal</p>
+                  </div>
+                </div> -->
+                <!-- <div class="row justify-content-center">
+                  <div class="col-lg-12 col-md-6">
+                    <div class="person person_f">
+                      <img src="Inagurations/sudi.jpg" class=" img-fluid shadow-lg rounded" alt="Narendra Modi" width="210px" height="210px">
+                      <h5 class="mt-3">Hon’ble Nawal Kishor Sah Sudi</h5>
+                      <p>Minister of Forest & Environment</p>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+
+                <div class="all_detail">
+                  <div class="container">
+                    <div class="d-flex justify-content-center align-items-center">
+                      <hr style="width: 633px;">
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                      <div class="col-lg-2 col-md-6">
+                        <div class="person person_f">
+                          <img src="Inagurations/nirvanadai.jpg" class="w-100 img-fluid shadow-lg rounded">
+                          <h5 class="mt-3">Mr. Nirvana Chaudhary</h5>
+                          <p>VP - Confederation of Nepalese Industries (CNI) VP - CG Corp</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6">
+                        <div class="person person_f">
+                          <img src="./Inagurations/ayapilla.jpg" class="w-100 img-fluid shadow-lg rounded">
+                          <h5 class="mt-3">Mr. Rajesh Ayapilla</h5>
+                          <p>Senior Director - The Coca Cola Company</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6">
+                        <div class="person person_f">
+                          <img src="./Inagurations/amunsir.jpg" class="w-100 img-fluid shadow-lg rounded">
+                          <h5 class="mt-3">Amun Thapa</h5>
+                          <p>CEO - Khaalisisi Waste Management Company</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+<!-- and this section -->
+            <!-- </div>
+          </div>
+        </section>
+      </section> -->
+
+    </div>
+    <hr>
+
+    <div class="container mt-4" id="panel_swipe">
+      <section class="text-center">
+        <div class="row py-lg-3">
+          <div class="col-lg-6 col-md-8 text-start">
+            <!-- <h1 class="fw-bold" style="font-style: normal;">Panel Discussion</h1> -->
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold">PANEL DISCUSSION</h1>
+              <div class="line"></div>
+            </div>
           </div>
         </div>
       </section>
+      <div aria-labelledby="tab-1" class="tab-pane show active mt-2" id="pane-1" role="tabpanel">
+        <div aria-labelledby="heading-1" class="collapse show" data-bs-parent="#range0" id="collapse-1" role="tabpanel">
+          <div class="card-body">
+            <div class="row">
+              <!-- Panel Discussion -->
+              <!-- Single Panel -->
+              <div class="mb-4" id="heading-1" role="tab">
+                <button class="btn btn-success w-100">
+                <span class="fs-4" style="font-style: normal; background-image: url(hero/footer.png);">PANEL 1: Mayor’s Forum : Discussion on The State of Waste Management in Nepal.</span>
+                </button>
+              </div>
+              <div class="col-lg-12">
+                <div class="prodrange_contet">
+                  <div class="tab-date">
+                    <div class="row align-items-center">
+                      <div class="col-4">
+                        <div class="day_date d-none">
+                          Feb 21, 2024
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="row">
+                      <div class="col-lg-1">
+                      </div>
+                    </div>
+                    <div class="col-lg-11">
+                      <div class="ist-text">
+                        <div>
+                          <div class="d-flex justify-content-start align-items-center gap-1">
+                            <!-- <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar"> -->
+                            <div class="add-time add-time_ag">
+                              <h6 class="text-success fw-normal mt-3 ">10:40 - 12:10</h6>
+                            </div>
+                          </div>
+                          <h3 style="font-style: normal;">PANEL 1: Mayor’s Forum : Tough Talk on The State of Waste Management in Nepal.
+                          </h3>
+    
+                          <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Speakers:</span></p>
+                          <section>
+                            <div class="container">
+                              <div class="row d-flex justify-content-center align-item-center">
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/chiri.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Chiribabu Maharjan</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Mayor - Lalitpur Metropolitan City</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/renu.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Renu Dahal <span style="color: red;">(TBC)</span></span><br>
 
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px">Mayor - Bharatpur Metropolitan City</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/dilbhusan.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Dil Bhusan Pathak</span><br>
+                                      <span style="font-weight: 500; font-style: normal; font-size: 14px">Moderator</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px">Host-TOUGH Talk </span><br>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/gopal.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Gopal Hamal</span>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Mayor - Dhangadi Sub-Metropolitan City</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/chintan.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Chintan Tamang</span>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Mayor - Dhankuta Municipality</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/mitharam.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Mitharam Adhikari</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Mayor - Budanilkantha Municipality</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Objective:</span> 
+                            <span style="font-weight: 400; font-size: 18px; font-style: normal;"
+                              class="text-dark">The Mayor's Forum serves as a platform to discuss challenges, opportunities, and plans for waste management in Nepal's metropolitan areas and municipalities, fostering dialogue among stakeholders to address pressing issues and identify strategic solutions. 
+                            </span>
+                          </p>
+                          </p>
+                          <p style="text-align: left;">
+                          <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Expected Outcome:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;"class="text-dark">The Mayor's Forum will pinpoint waste management challenges in Nepal's urban areas while uncovering opportunities for innovation and collaboration. Stakeholders will devise actionable plans to address these challenges, fostering cooperation among local governments, businesses, and communities. 
+                            </span>
+                          </p>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+              </div>
+              <!-- Single Panel -->
+              <div class="mb-4" id="heading-1" role="tab">
+                <button class="btn btn-success w-100">
+                <span class="fs-4">PANEL 2 : Waste to Wealth: Can Garbage Really Make you Rich?
+                </span>
+                </button>
+              </div>
+              <div class="col-lg-12">
+                <div class="prodrange_contet">
+                  <div class="tab-date">
+                    <div class="row align-items-center">
+                      <div class="col-4">
+                        <div class="day_date d-none">
+                          Feb 21, 2024
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="row">
+                      <div class="col-lg-1">
+                        <!-- <div class="ist-time">
+                          <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
+                          <div class="add-time add-time_ag">
+                              <p>12:30 - 14:00 </p>
+                          </div> -->
+                      </div>
+                    </div>
+                    <div class="col-lg-11">
+                      <div class="ist-text">
+                        <div>
+                          <div class="d-flex justify-content-start align-items-center gap-1">
+                            <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
+                            <div class="add-time add-time_ag">
+                              <h6 class="text-success fw-normal mt-3 ">12:10 - 13:00</h6>
+                            </div>
+                          </div>
+                          <h3 style="font-style: normal;">PANEL 2 : Waste to Wealth: Can Garbage Really Make you Rich?
+                          </h3>
+                          <p style="text-align: left;">
+                          
+                          <!-- <p style="text-align: left;">As the world faces new wars, resurgent conflicts, and human crises, the United Nations Security Council’s ability to function effectively and fairly is being questioned ever more widely. Its permanent membership does not reflect the reality of representation and influence in the 21<sup>st</sup> century, and its resolutions’ efficacy is dwindling. The wars in Gaza and Ukraine are a strong indictment of the Security Council’s role; and thus, calls for its equitable and just reform must be answered.</p>
+                            <p style="text-align: left;"><span style="color: rgb(0, 105, 166);"> -->
+                          <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Speakers:</span></p>
+                          <section>
+                            <div class="container">
+                              <div class="row d-flex justify-content-center align-item-center">
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/chandrakumar.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Chandra Kumar Ghimire</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Former Secretary - MOISC</span><br>
+                                      <span style="font-size: 14px;">Policy Researcher - Industry, FDI & Promotion, Startups</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/siddhant.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Siddhant Raj Panday</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Chairman & CEO</span>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Business Oxygen (BO2)</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/ritu.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Ritu P. Malla</span><br>
+                                      <span style="font-weight: 500; font-style: normal; font-size: 14px;">Moderator</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Director - USAID Trade and Competitiveness</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/panda.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Dr. Aditya Panda</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Director - Public Affairs & Sustainability</span><br>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">The Coca Cola Company</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-6">
+                                  <div class="card shadow-sm">
+                                    <img src="./photos/yash.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                    <div class="card-body text-start mt-2">
+                                      <span style="font-weight: 700; font-style: normal;">Yash Sharma</span>
+                                      <span style="font-weight: 400; font-style: normal; font-size: 14px;">Director - Ganesha Ecosphere</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Objective:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Explore the potential of transforming waste into wealth, examining strategies, technologies, and business models that leverage waste as a resource for economic prosperity and environmental sustainability.
+                          </span>
+                        </p>
+                        </p>
+                        <p style="text-align: left;">
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Expected Outcome:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Generate awareness about the economic opportunities inherent in waste management, and inspire innovative approaches to waste-to-wealth initiatives.
+                          </span>
+                        </p>
+                        </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <!-- Single Panel -->
+            <div class="mb-4" id="heading-1" role="tab">
+              <button class="btn btn-success w-100">
+              <span class="fs-4">PANEL 3: Carbon & Plastic Credit: Converting Emissions into Earth's Savings
+              </span>
+              </button>
+            </div>
+            <div class="col-lg-12">
+              <div class="prodrange_contet">
+                <div class="tab-date">
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <div class="day_date d-none">
+                        Feb 21, 2024
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-lg-1">
+                    </div>
+                  </div>
+                  <div class="col-lg-11">
+                    <div class="ist-text">
+                      <div>
+                        <div class="d-flex justify-content-start align-items-center gap-1">
+                          <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
+                          <div class="add-time add-time_ag">
+                            <h6 class="text-success fw-normal mt-3 ">14:05 - 14:55</h6>
+                          </div>
+                        </div>
+                        <h3 style="font-style: normal;">PANEL 3: Carbon & Plastic Credit: Converting Emissions into Earth's Savings
+                        </h3>
+                        <p style="text-align: left;">
+                        
+                        <!-- <p style="text-align: left;">As the world faces new wars, resurgent conflicts, and human crises, the United Nations Security Council’s ability to function effectively and fairly is being questioned ever more widely. Its permanent membership does not reflect the reality of representation and influence in the 21<sup>st</sup> century, and its resolutions’ efficacy is dwindling. The wars in Gaza and Ukraine are a strong indictment of the Security Council’s role; and thus, calls for its equitable and just reform must be answered.</p>
+                          <p style="text-align: left;"><span style="color: rgb(0, 105, 166);"> -->
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Speakers:</span></p>
+                        <section>
+                          <div class="container">
+                            <div class="row row d-flex justify-content-center align-item-center">
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/rohit.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Rohit Gupta</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">VP - CNI, Ramesh Corp</span> <span style="font-size: 14px;">Director - Shivam Cement</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/deepak.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Deepak Senthil Nath
+                                    </span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Managing Director  Bottlers Nepal Limited</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/subha.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Subha Laxmi Shrestha <span style="color: red;">(TBC)</span></span><br>
+
+                                    <span style="font-weight: 500; font-style: normal; font-size: 14px;">Moderator</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Dep Director 
+                                      Alternative Energy Promotion Center
+                                      </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/bimal.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Dr. Bimal Raj Regmi</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Expert & Advisor, Environmental Protection & Climate Change Management National Council
+
+                                      </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/bali.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Sidarth Bali</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">AVP - Renew Power, India</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Expert - Carbon Credit, Green Fuel</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Objective:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Delve into the concept of carbon & plastic credits and explore strategies for converting emissions into tradable assets, highlighting their role in mitigating climate change and promoting sustainable development.
+                        </span>
+                      </p>
+                      </p>
+                      <p style="text-align: left;">
+                      <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Expected Outcome:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Increase understanding of carbon & plastic credit mechanisms, identify opportunities for emission reduction and carbon offsetting, and foster collaboration between stakeholders to accelerate the adoption of carbon credit initiatives for environmental conservation and economic benefit.
+                        </span>
+                      </p>
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <!-- Single Panel -->
+            <div class="mb-4" id="heading-1" role="tab">
+              <button class="btn btn-success w-100">
+              <span class="fs-4">PANEL 4: Clearing the Air: Tackling Nepal's Air Pollution Crisis
+              </span>
+              </button>
+            </div>
+            <div class="col-lg-12">
+              <div class="prodrange_contet">
+                <div class="tab-date">
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <div class="day_date d-none">
+                        Feb 21, 2024
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-lg-1">
+                    </div>
+                  </div>
+                  <div class="col-lg-11">
+                    <div class="ist-text">
+                      <div>
+                        <div class="d-flex justify-content-start align-items-center gap-1">
+                          <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
+                          <div class="add-time add-time_ag">
+                            <h6 class="text-success fw-normal mt-3 ">14:55 - 15:55</h6>
+                          </div>
+                        </div>
+                        <h3 style="font-style: normal;">PANEL 4: Clearing the Air: Tackling Nepal's Air Pollution Crisis
+                        </h3>
+                        <p style="text-align: left;">
+                        
+                        <!-- <p style="text-align: left;">As the world faces new wars, resurgent conflicts, and human crises, the United Nations Security Council’s ability to function effectively and fairly is being questioned ever more widely. Its permanent membership does not reflect the reality of representation and influence in the 21<sup>st</sup> century, and its resolutions’ efficacy is dwindling. The wars in Gaza and Ukraine are a strong indictment of the Security Council’s role; and thus, calls for its equitable and just reform must be answered.</p>
+                          <p style="text-align: left;"><span style="color: rgb(0, 105, 166);"> -->
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Speakers:</span></p>
+                        <section>
+                          <div class="container">
+                            <div class="row row d-flex justify-content-center align-item-center">
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/bhusantula.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Bhushan Tuladhar
+                                    </span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Environment Specialist
+                                    </span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Chief of Party,  FHI 360
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/pandav.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Dr. Rajesh S. Pandav <span style="color: red;">(TBC)</span></span><br>
+
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">World Health organization (WHO) Representative to Nepal</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/shivanee.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Shivanee Thapa</span><br>
+                                    <span style="font-weight: 500; font-style: normal; font-size: 14px;">Moderator
+                                    </span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Senior News Editor - Nepal TV</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/arnico.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Dr. Arnico K. Panday <span style="color: red;">(TBC)</span></span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Member - National Planning Commission</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Atmospheric Scientist</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/surya.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Dr. Surya Dhungel                                    
+                                    </span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Commissioner
+                                      National Human Rights Commission Nepal</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Objective:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">To explore actionable strategies and solutions for addressing Nepal's air pollution crisis through collaborative dialogue and expertise-sharing 
+                        </span>
+                      </p>
+                      </p>
+                      <p style="text-align: left;">
+                      <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Expected Outcome:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Formulation of actionable recommendations and policy frameworks informed by expert insights and collaborative discussions, aimed at significantly reducing air pollution levels and improving overall air quality in Nepal.
+                        </span>
+                      </p>
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <!-- Single Panel -->
+            <div class="mb-4" id="heading-1" role="tab">
+              <button class="btn btn-success w-100">
+              <span class="fs-4">PANEL 5: Everest Under Pressure: Climate's Grip on Sagarmatha
+              </span>
+              </button>
+            </div>
+            <div class="col-lg-12">
+              <div class="prodrange_contet">
+                <div class="tab-date">
+                  <div class="row align-items-center">
+                    <div class="col-4">
+                      <div class="day_date d-none">
+                        Feb 21, 2024
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-lg-1">
+                      <!-- <div class="ist-time">
+                        <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
+                        <div class="add-time add-time_ag">
+                            <p>12:30 - 14:00 </p>
+                        </div> -->
+                    </div>
+                  </div>
+                  <div class="col-lg-11">
+                    <div class="ist-text">
+                      <div>
+                        <div class="d-flex justify-content-start align-items-center gap-1">
+                          <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
+                          <div class="add-time add-time_ag">
+                            <h6 class="text-success fw-normal mt-3 ">16:30 - 17:30</h6>
+                          </div>
+                        </div>
+                        <h3 style="font-style: normal;">PANEL 5: Everest Under Pressure: Climate's Grip on Sagarmatha
+                        </h3>
+                        <p style="text-align: left;">
+                        
+                        <!-- <p style="text-align: left;">As the world faces new wars, resurgent conflicts, and human crises, the United Nations Security Council’s ability to function effectively and fairly is being questioned ever more widely. Its permanent membership does not reflect the reality of representation and influence in the 21<sup>st</sup> century, and its resolutions’ efficacy is dwindling. The wars in Gaza and Ukraine are a strong indictment of the Security Council’s role; and thus, calls for its equitable and just reform must be answered.</p>
+                          <p style="text-align: left;"><span style="color: rgb(0, 105, 166);"> -->
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Speakers:</span></p>
+                        <section>
+                          <div class="container">
+                            <div class="row row d-flex justify-content-center align-item-center">
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/maloo.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Anurag Maloo</span>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Mountaineer</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Environmental Actvist</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">“The Miracle Man”</span><br>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/arunbhakta.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Arun Bhakta Shrestha
+                                    </span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Group Lead - ICIMOD</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Climate and Environment</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/sneh.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Sneh Rajbhandari</span>
+                                    <span style="font-weight: 500; font-style: normal; font-size: 14px;">Moderator</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Director - Public Affairs & Sustainability, Coca-Cola Beverages</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/popular.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Dr. Popular Gentle</span><br>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Climate Change and Environment Advisor to Rt. Hon'ble Prime Minister of Nepal                                    </span><br>
+                                    <!-- <span style="font-weight: 400; font-style: normal; font-size: 14px;">Department of National Parks and Wildlife Conservation - MoFE</span> -->
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-4 col-sm-6">
+                                <div class="card shadow-sm">
+                                  <img src="./photos/sherpa.jpg" alt="" class="bd-placeholder-img card-img-top" width="210" height="auto">
+                                  <div class="card-body text-start mt-2">
+                                    <span style="font-weight: 700; font-style: normal;">Lhakpa Gyalzen Sherpa</span>
+                                    <span style="font-weight: 400; font-style: normal; font-size: 14px;">Chairman, Heli Everest</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Objective:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Examine the impact of climate change on Sagarmatha (Mount Everest) and its surrounding ecosystem, discussing the challenges, vulnerabilities, and potential solutions to mitigate climate-related threats. 
+                        </span>
+                      </p>
+                      </p>
+                      <p style="text-align: left;">
+                      <p class="fw-bold mt-4"><span class="text-success" style="font-size: 18px; font-style: normal;">Expected Outcome:</span> <span style="font-weight: 400; font-size: 18px; font-style: normal;" class="text-dark">Raise awareness about the climate-induced pressures facing Sagarmatha, foster dialogue on conservation and adaptation strategies, and galvanize action to protect this iconic mountain and its fragile ecosystem for future generations.
+                        </span>
+                      </p>
+                      </p>
+                      <hr>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- single panel end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <section class="text-center">
+        <div class="row py-lg-5">
+          <div class="col-lg-12 col-md-8 text-start">
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold" id="case_presentation">CASE PRESENTATION</h1>
+              <div class="line"></div>
+            </div>
+            <p class="text-body-primary" style="width: 90%; font-size: 18px;">
+              Discover innovative solutions in waste management and climate action through our case presentations. From NHRC's landfill monitoring video report to Khaalisisi Waste Management Company's pedal-powered initiatives, each offers unique insights. Explore Dhankuta's park-inspired landfill approach and Nepal's commitment to the Paris Agreement. Join us as we showcase transformative projects shaping a sustainable future.</p>
+          </div>
+        </div>
+      </section>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./Case Presentations/1.jpeg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
+            </div>
+            <br>
+            <!-- <p class="mt-1">A short 5 minutes long video will be displayed to show how Sisdol is so dirty.</p> -->
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./Case Presentations/2.jpeg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
+            </div>
+            <br>
+            <!-- <p class="mt-1">A short 5 minutes long video will be displayed about Dhankuta Landfill Park.</p> -->
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./Case Presentations/3.jpeg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
+            </div>
+            <br>
+            <!-- <p class="mt-1">A short 5 minutes long video will be displayed to show how Khaalisisi Friends work.</p> -->
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./Case Presentations/4.jpeg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
+            </div>
+            <br>
+            <!-- <p class="mt-1">A short 5 minutes long video will be displayed about Paris Climate Agreement.</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container" id="confhighlights">
+      <section class="text-center">
+        <div class="row py-lg-5">
+          <div class="col-lg-12 col-md-8 text-start">
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold">CONFERENCE HIGHLIGHTS</h1>
+              <div class="line"></div>
+            </div>
+            <p class="text-body-primary" style="width: 90%; font-size: 18px;">
+              Embark on a journey through innovation and collaboration at our event. Encounter groundbreaking initiatives, immersive simulations, and visionary ideas reshaping waste management and climate action. From the unveiling of pioneering educational tools to the prestigious 'Green College Champion' competition, join us in celebrating the strides towards a sustainable future.</p>
+          </div>
+        </div>
+      </section>
       <div class="album bg-body-tertiary">
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
+              <h5>Book Launch - ABC for Climate</h5>
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <img src="highlights/booklaunch.jpg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
               </div>
+              <p class="mt-2">Get ready to shake up the alphabet game with the launch of "ABC for Climate"! Say goodbye to the same old "A for Apple, B for Ball, and C for Cat" routine. This book flips the script by introducing exciting environmental terms like "A for Atmosphere, B for Biodiversity, and C for Climate."
+              </p>
             </div>
             <div class="col">
+              <h5>Sisdol Landfill Simulation</h5>
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <img src="highlights/sisdol.jpg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
               </div>
+              <p class="mt-2">As guests are registered, they'll be escorted to a 4D Projection Room to experience a simulation of the Sisdol landfill landscape.</p>
             </div>
             <div class="col">
+              <h5>Green College Champion</h5>
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <img src="highlights/greencollegeimage.jpg" alt="" class="bd-placeholder-img card-img-top" width="100%" height="auto">
               </div>
+              <p class="mt-2">6 college teams have made it to the final round, competing for the prestigious title of 'Green College Champion' and the opportunity to win up to NPR 1L for their innovative ideas in waste management and climate action.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-5 mb-5">
-        <button class="btn btn-success w-100">View More</button>
-      </div>
     </div>
-
-    <div class="container">
-      <section class="text-center">
-        <div class="row py-lg-3">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Sponsers</h1>
-          </div>
-        </div>
-      </section>
-
-      <div class="container px-3 py-3">
-        <section class="ftco-section ftco-no-pt ftco-no-pb">
-          <div class="logos container-fluid mt-3">
-            <div class="logos-slide">
-              <img src="/Images/audi.png">
-              <img src="/Images/ford.png">
-              <img src="/Images/honda.png">
-              <img src="/Images/hyundai.png">
-              <img src="/Images/jeep.png">
-              <img src="/Images/kia.png">
-              <img src="/Images/maserati.png">
-              <img src="/Images/porsche.png">
-              <img src="/Images/subaru.png">
-            </div>
-            <div class="logos-slide">
-              <img src="/Images/audi.png">
-              <img src="/Images/ford.png">
-              <img src="/Images/honda.png">
-              <img src="/Images/hyundai.png">
-              <img src="/Images/jeep.png">
-              <img src="/Images/kia.png">
-              <img src="/Images/maserati.png">
-              <img src="/Images/porsche.png">
-              <img src="/Images/subaru.png">
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <div class="container mt-4">
-      <div aria-labelledby="tab-1" class="tab-pane show active mt-5" id="pane-1" role="tabpanel">
-        <div class="" id="heading-1" role="tab">
-          <button class="btn btn-success w-100">
-            Day 1 - Feb 21, 2024
-          </button>
-        </div>
-        <div aria-labelledby="heading-1" class="collapse show" data-bs-parent="#range0" id="collapse-1" role="tabpanel">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="prodrange_contet">
-                            <div class="tab-date">
-                                <div class="row align-items-center">
-                                    <div class="col-4">
-                                        <div class="day_date d-none">
-                                            Feb 21, 2024
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <div class="ist-time">
-                                            <img src="https://www.orfonline.org/public/images/add-calendar.png" class="img-fluid" alt="calendar">
-                                            <div class="add-time add-time_ag">
-                                                <p>12:30 - 14:00 </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <div class="ist-text">
-                                            <h5>Mumtaz</h5>
-                                            <h3>UNSC First: Reforming Multilateralism</h3>
-                                            <p style="text-align: left;">As the world faces new wars, resurgent conflicts, and human crises, the United Nations Security Council’s ability to function effectively and fairly is being questioned ever more widely. Its permanent membership does not reflect the reality of representation and influence in the 21<sup>st</sup> century, and its resolutions’ efficacy is dwindling. The wars in Gaza and Ukraine are a strong indictment of the Security Council’s role; and thus, calls for its equitable and just reform must be answered.</p>
-                                            <p style="text-align: left;">Can the permanent members’ veto to serve narrow national interests in the UNSC be defended in the face of deepening and interlocking crises, and how can permanent membership be reformed? How can the UNSC meaningfully accommodate more diverse perspectives and voices? Can a reform of the UNSC be meaningful without reforming the outdated Permanent member composition which reflects the geopolitical reality of 1945? What are the ways in which the UNSC can recover its lost credibility and authority? Is the Summit of the Future a critical opportunity to save the UN and what tangible measures must be announced in a time-bound manner?</p>
-                                            <p style="text-align: left;"><span style="color: rgb(0, 105, 166);"><strong>Speakers:</strong></span></p>
-                                            <p style="text-align: left;"><strong>Alexander Marschik</strong>, Permanent Representative to the United Nations, Austria <br> <br><strong>Inga Rhonda King</strong>, Permanent Representative to the United Nations, Saint Vincent and Grenadines <br> <br><strong>Tareq M. A. M. Albanai</strong>, Permanent Representative to the United Nations, State of Kuwait <br> <br><strong>Eenam Gambhir</strong>, Joint Secretary (UNP), Ministry of External Affairs, India<br> <br><span style="color: rgb(0, 105, 166);"><strong>Moderator:</strong></span></p>
-                                            <p style="text-align: left;"><strong>Dhruva Jaishankar</strong>, Executive Director, Observer Research Foundation America, United States </p>
-                                            <div class="agenda_msg agenda_msg_imp  w-100 viewallbuttion"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <div class="container">
-      <footer class="py-5">
-        <div class="row">
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-          </div>
-    
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-          </div>
-    
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-          </div>
-    
-          <div class="col-md-5 offset-md-1 mb-3">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
-              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                <button class="btn btn-success" type="button">Subscribe</button>
+    <hr>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-8">
+          <div id="green_awards">
+            <div class="d-flex justify-content-between align-items-center border p-3 bg-success rounded shadow-sm">
+              <div class="title">
+                <h1 class="text-left text-white" style="font-style: normal;">Apply For Green Awards</h1>
               </div>
-            </form>
+              <!-- <button class="btn btn-light">Nominate Now</button> -->
+            </div>
+            <br>
+            <br>
+            <div class="details-list">
+              <!-- Added a class for styling -->
+              <div style="font-size: 18px; font-style: normal;">1. <b>Green Business Excellence Award:</b> For demonstrating outstanding commitment to sustainability</div>
+              <div style="font-size: 18px; font-style: normal;">2. <b>Green Startup Achievement Award:</b> Innovative startups driving environmental sustainability</div>
+              <div style="font-size: 18px; font-style: normal;">3. <b>Green NGO Recognition Award:</b> Outstanding NGO contribution to environmental conservation</div>
+              <div style="font-size: 18px; font-style: normal;">4. <b>Green Hospitality Award:</b> Commitment to environmental sustainability in hospitality</div>
+              <div style="font-size: 18px; font-style: normal;">5. <b>Sustainable Resort Excellence Award:</b> Resorts excelling in sustainable practices</div>
+              <div style="font-size: 18px; font-style: normal;">6. <b>Sustainable Dining Award:</b> Restaurants committed to sustainable sourcing</div>
+              <div style="font-size: 18px; font-style: normal;">7. <b>Green Healthcare Achievement Award:</b> Leadership in healthcare sustainability</div>
+              <div style="font-size: 18px; font-style: normal;">8. <b>Sustainable Education Award:</b> Champions of environmental education</div>
+              <div style="font-size: 18px; font-style: normal;">9. <b>Eco-Logistics Excellence Award:</b> Companies excelling in eco-friendly logistics</div>
+              <div style="font-size: 18px; font-style: normal;">10. <b>Green Bank of the Year:</b> Leading the charge in sustainable finance</div>
+              <div style="font-weight: 400; font-style: italic; color: green;">Note: The winners will be carefully chosen by our distinguished Jury Committee, comprising esteemed organizations. The esteemed Honorable Sudi will graciously present the awards to the deserving recipients.</div>
+            </div>
           </div>
         </div>
+        <div class="col-lg-4">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAMTKl0qcajoZ_14PcNf5ZzRQSO1G1Gnh13efPlffb2QOxcg/viewform?usp=sf_link" width="500" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
+      <hr>
+    </div>
     
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>© 2024 Company, Inc. All rights reserved.</p>
-          <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+    <div class="container" id="todoevent">
+      <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="title">
+            <div class="d-flex gap-5">
+              <h1 class="fw-bold">PROGRAM SCHEDULE</h1>
+              <div class="line"></div>
+            </div>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias consectetur atque, optio, veniam quis commodi voluptates et dolorem cum asperiores vero nobis ut exercitationem delectus esse similique eum non harum.</p> -->
+          </div>
+        </div>
+        <hr class="mb-3">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Agenda</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:30 - 09:30</td>
+                <td style="font-weight: 400;">Registration & Welcome - Sisdol Landfill Experience</td>
+              </tr>
+              <tr>
+                <td>09:30 - 10:35</td>
+                <td style="font-weight: 400;">Inauguration Ceremony | Chief Guest Rt. Hon’ble Prime Minister</td>
+              </tr>
+              <tr>
+                <td>10:35 - 10:40</td>
+                <td style="font-weight: 400;">Video Case Presentation 1: NHRC’s Landfill Monitoring Visit Report</td>
+              </tr>
+              <tr>
+                <td>10:40 - 12:10</td>
+                <td style="font-weight: 400;">Panel 1: Mayor’s Forum : Tough Talk on The State of Waste Management in Nepal.</td>
+              </tr>
+              <tr>
+                <td>12:10 - 13:00</td>
+                <td style="font-weight: 400;">Panel 2: Waste to Wealth: Can garbage really make you rich?</td>
+              </tr>
+              <tr>
+                <td>13:00 - 14:00</td>
+                <td style="font-weight: 400;">Break for Lunch</td>
+              </tr>
+              <tr>
+                <td>14:00 - 14:05</td>
+                <td style="font-weight: 400;">Video Case Presentation 2 - Pedal-powered Waste Reduction</td>
+              </tr>
+              <tr>
+                <td>14:05 - 14:55</td>
+                <td style="font-weight: 400;">Panel 3: Carbon & Plastic Credit: Converting Emissions into Earth's Savings</td>
+              </tr>
+              <tr>
+                <td>14:55 - 15:55</td>
+                <td style="font-weight: 400;">Panel 4: Clearing the Air: Tackling Nepal's Air Pollution Crisis</td>
+              </tr>
+              <tr>
+                <td>15:55 - 16:00</td>
+                <td style="font-weight: 400;">Video Case Presentation 3 - Dhankuta’s Park-inspired Landfill</td>
+              </tr>
+              <tr>
+                <td>16:00 - 16:20</td>
+                <td style="font-weight: 400;">Break for Tea</td>
+              </tr>
+              <tr>
+                <td>16:20 - 16:30</td>
+                <td style="font-weight: 400;">Paper Presentation on the Paris Agreement's objectives</td>
+              </tr>
+              <tr>
+                <td>16:30 - 17:30</td>
+                <td style="font-weight: 400;">Panel 5: Everest Under Pressure: Climate's Grip on Sagarmatha</td>
+              </tr>
+              <tr>
+                <td>17:30 - 18:00</td>
+                <td style="font-weight: 400;">Green College Champion: Business Idea Competition</td>
+              </tr>
+              <tr>
+                <td>18:00 - 19:00</td>
+                <td style="font-weight: 400;">Closing Ceremony | Chief Guest Hon’ble Minister of Forest & Environment</td>
+              </tr>
+              <tr>
+                <td>19:00 - 20:00</td>
+                <td style="font-weight: 400;">Networking & Dinner</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    <footer>
+      <div class="row p-2 d-flex justify-content-between align-items-center" id="contactus">
+        <div class="col-lg-6">
+          <ul class="social_icon">
+            <li>
+              <a href="https://www.facebook.com/khaalisisi" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/khaalisisi/?hl=en" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/khaalisisi/?originalSubdomain=np" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="">
+            <h5 class="text-white fw-400">June 5, 2024 | World Environment Day</h5>
+            <p class="text-white fw-400">Hotel Soaltee, Kathmandu</p>
+            <p class="text-white fw-400">©2024 WMCC. All rights reserved.</p>
           </ul>
         </div>
-      </footer>
-    </div>
+        <div class="col-lg-6">
+          <div class="container mt-4">
+            <ul class="text-end">
+              <!-- <p class="text-white fw-400" style="font-size: 14px;">
+                IF YOU WANT TO PARTICIPATE IN THIS CONFERENCE <br> OR WANT TO SPONSOR THIS CAUSE, CONTACT US 
+              </p> -->
+              <p class="text-white fw-400">If you want to participate in this conference or want to sponsor this cause, contact us</p>
+              <p class="text-white fw-normal">
+                <ion-icon name="call-outline"></ion-icon>
+                <a href="tel:+9745714994" class="text-white">9745714994</a> | <a href="tel:+9863426226" class="text-white">9863426226</a><br>
+                <ion-icon name="mail-outline"></ion-icon>
+                <a href="mailto:wmccupdates@gmail.com" class="text-white">wmccupdates@gmail.com</a>
+              </p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var tabs = new mdb.Tab(document.getElementById('ex1'));
+        tabs.init();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
+      ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </body>
 </html>

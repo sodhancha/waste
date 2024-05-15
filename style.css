@@ -1,4 +1,4 @@
-.bg-primary{
+.bg-primary {
   color: green !important;
 }
 
@@ -22,7 +22,7 @@
 @keyframes slide {
   from {
     transform: translateX(0%);
-  } 
+  }
   to {
     transform: translateX(-100%);
   }
@@ -30,4 +30,15 @@
 
 .logos:hover .logos-slide {
   animation-play-state: paused;
+}
+
+/* Adjust the margin and padding of the details list */
+.details-list {
+  margin-top: -20px; /* Adjust this value as needed */
+}
+
+/* Optional: Style the individual detail items */
+.details-list div {
+  text-align: left;
+  margin-bottom: 10px; /* Add some spacing between each detail item */
 }
